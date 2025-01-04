@@ -5,29 +5,17 @@
 using namespace std;
 
 int main(){
-    long long x;
-    cin>> x;
+    string s;
+    cin>> s;
 
-    //frequency array
-    vector<int> f(10);
+    vector<int> f(10,0);
 
-    vector<int> digits;
-    while(1){
-        if(x == 0) break;
-
-        f[x%10]++;
-        digits.push_back(x%10);
-        x /= 10;
+    for(int i=0; i<s.size() ;i++){
+        f[s[i]-'0']++;
     }
 
-    // for(int i=0; i<10 ;i++){
-    //     cout<< f[i] <<" ";
-    // }
-    // cout<<endl;
-
-    int mx = INT_MIN;
-    int idx = 0;
-
+    //Find the digit with maximum frequency
+    int mx = INT_MIN, idx = 0;
     for(int i=0; i<10 ;i++){
         if(f[i] > mx){
             mx = f[i];
@@ -35,7 +23,8 @@ int main(){
         }
     }
 
-    cout<< idx <<endl;
+    cout << idx << endl;
+    
     
     return 0;
 }
