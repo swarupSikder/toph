@@ -1,6 +1,1 @@
-5
-baaaaa
-baaa
-baaaaaaa
-baaaaaaaaaa
-baa
+0 10
